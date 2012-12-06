@@ -1,0 +1,24 @@
+    program Project1;
+
+uses
+  Forms,
+  windows,
+  Unit1 in 'Unit1.pas' {Form1},
+  Unit2 in 'Unit2.pas' {Form2};
+
+{$R *.res}
+
+begin
+//створюємо в пам'яті форму-заставку
+form2:=Tform2.Create(nil);
+//відображаємо форму-заставку на екрані
+form2.Show;
+//обновляємо форму-заставку
+form2.Repaint;
+//робимо паузу в 2 секунди
+sleep(5000);
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  form2.free;
+  Application.Run;
+end.
