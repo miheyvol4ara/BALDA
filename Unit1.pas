@@ -1,3 +1,6 @@
+//РљР°СЂРїСѓС€РєРёРЅ РђР»РµРєСЃР°РЅРґСЂ 
+// Р РµР°Р»РёР·РѕРІР°Р» РІСЃРµ С„СѓРЅРєС†РёРё
+
 unit Unit1;
 
 interface
@@ -6,10 +9,10 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, Menus, ComCtrls, Gauges, ImgList, jpeg;
 
-type TMatrix=array of array of char;   //Поле с буквами
+type TMatrix=array of array of char;   //пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
      TPoints=array of TPoint;
      TWords=array of string;
-     TMPoints=array of TPoints;        //Координаты букв слова - MPoints[i]
+     TMPoints=array of TPoints;        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - MPoints[i]
 
 type
   TForm1 = class(TForm)
@@ -23,12 +26,12 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    procedure UndoSelection;                       //Отмена выбора
-    function CutWords(W:TWords; Str:string):TWords;  //Возвращает слова начинающиеся на Str
-    function WordExists(var W:TWords; Str:string):boolean;  //Присутствие слова в словаре
-    procedure FindWords(var M:TMatrix; var W:TWords; D:TWords; var MP:TMPoints; P:TPoints; x,y,xl,yl,max:integer; r:string); //Поиск всех слов начинающихся с буквы Desk[x,y] (M - доска, W - уже найденные слова, D - текущий словарь, MP - координаты букв слов из W)
-    function AroundLetters(x,y:integer):boolean; //Есть ли буква рядом
-    procedure CreateAlphabet(x,y:integer; w,h:integer);    //Создание алфавита из Panel
+    procedure UndoSelection;                       //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    function CutWords(W:TWords; Str:string):TWords;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Str
+    function WordExists(var W:TWords; Str:string):boolean;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    procedure FindWords(var M:TMatrix; var W:TWords; D:TWords; var MP:TMPoints; P:TPoints; x,y,xl,yl,max:integer; r:string); //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ Desk[x,y] (M - пїЅпїЅпїЅпїЅпїЅ, W - пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, D - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, MP - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ W)
+    function AroundLetters(x,y:integer):boolean; //пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    procedure CreateAlphabet(x,y:integer; w,h:integer);    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Panel
     procedure PDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure P2Down(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure PUP(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
@@ -36,13 +39,13 @@ type
     procedure CreateDesk;
     procedure DrawDesk;
     procedure NewGame;
-    procedure NextStep;    //Ход компутера
-    function PosExists(var P:TPoints; x,y:integer):boolean; //Присутствие позиции x,y в P
+    procedure NextStep;    //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    function PosExists(var P:TPoints; x,y:integer):boolean; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ x,y пїЅ P
     procedure LoadGame(FileName:string);
-    procedure AddWord(Str:String; Player:byte);       //Добавляем слово
+    procedure AddWord(Str:String; Player:byte);       //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     procedure SetText(S1,S2:string; P,I:integer);
-    procedure SetFirstWord(len:integer);              //Задаем начальное слово (которое по середине)
-    procedure FindAllWords(var W:TWords; var MP:TMPoints; max:integer);   //Поиск всех слов длины max на доске
+    procedure SetFirstWord(len:integer);              //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
+    procedure FindAllWords(var W:TWords; var MP:TMPoints; max:integer);   //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ max пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     function  FindPanelByPos(x,y:integer):TPanel;
     procedure SelectWord(var W:TWords; MP:TMPoints; index:integer);
     procedure ListBox1DrawItem(Control: TWinControl; Index: Integer;
@@ -75,10 +78,10 @@ implementation
 
 {$R *.dfm}
 
-//Формирование панели алфавита
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 procedure TForm1.CreateAlphabet(x,y:integer; w,h:integer);
 const
-str='абвгдежзиклмнопрстуфхцчшщъыьэюя ';
+str='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ';
 var
 ind,i,j:integer;
 begin
@@ -90,11 +93,11 @@ for i:=0 to 1 do begin
    Left:=j*w+x;
    Top:=i*h+y;
    Caption:=AnsiUpperCase(str[ind]);
-   //размер шрифта
+   //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
    font.Size:=15;
-   //Цвет букв в алфавите
+   //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
    font.Color:=clwhite;
-   //цвет фона алфавита
+   //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
    color:=clblack;
    Width:=w;
    Height:=h;
@@ -161,7 +164,7 @@ begin
 for i:=0 to High(Coords) do FindPanelByPos(33*Coords[i].X+118,33*Coords[i].Y+30).Color:=clblack;
 if SelPan<>nil then begin
  SelPan.Caption:=' ';
- //цвет посте выделения матрицы
+ //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  SelPan.Color:=clblack;
  SelPan:=nil;
  SetLength(Coords,0);
@@ -170,9 +173,9 @@ end;
 
 procedure TForm1.PUP(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-//цвет фона текста после выделения
+//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  (Sender as TPanel).Color:=clblack;
- //цвет текста после выделения
+ //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  (Sender as TPanel).Font.Color:=clwhite;
 if SelPan<>nil then begin
 SelPan.Caption:=AnsiLowerCase((Sender as TPanel).Caption);
@@ -231,7 +234,7 @@ Readln(ex);
  SetLength(Exclusions,Length(Exclusions)+1);
  Exclusions[High(Exclusions)]:=ex;
  CreateAlphabet(22,240,25,25);
- SetText('Счет '+inttostr(S1)+'\'+inttostr(S2),'',0,1);
+ SetText('пїЅпїЅпїЅпїЅ '+inttostr(S1)+'\'+inttostr(S2),'',0,1);
  DrawDesk;
  maxlen:=4;
 end;
@@ -246,7 +249,7 @@ begin
   Desk[x,y]:=' ';
 end;
 
-function TForm1.WordExists(var W:TWords; Str:string):boolean;   //Поиск слова
+function TForm1.WordExists(var W:TWords; Str:string):boolean;   //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 var
 i:integer;
 begin
@@ -259,7 +262,7 @@ begin
 Result:=false;
 end;
 
-function TForm1.PosExists(var P:TPoints; x,y:integer):boolean;   //Повторение позиции
+function TForm1.PosExists(var P:TPoints; x,y:integer):boolean;   //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 var
 i:integer;
 begin
@@ -272,7 +275,7 @@ begin
 Result:=false;
 end;
 
-function ExitDesk(x,y:integer):boolean;  //Выход за пределы поля
+function ExitDesk(x,y:integer):boolean;  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 begin
 Result:=true;
  if (x>=0) and (x<=High(Desk)) and (y>=0) and (y<=High(Desk)) then Result:=false;
@@ -306,19 +309,19 @@ end;
  Result:=R;
 end;
 
-procedure TForm1.FindWords(var M:TMatrix; var W:TWords; D:TWords; var MP:TMPoints; P:TPoints; x,y,xl,yl,max:integer; r:string); //Поиск всех слов начинающихся с M[x,y] //M - матрица букв  W - найденные слова  P - пройденные позиции  x,y - текущие координаты  r - текущее слово
+procedure TForm1.FindWords(var M:TMatrix; var W:TWords; D:TWords; var MP:TMPoints; P:TPoints; x,y,xl,yl,max:integer; r:string); //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ M[x,y] //M - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ  W - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ  P - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ  x,y - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  r - пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 begin
 if (length(r)>=max) or (M[x,y]=' ') or (Length(D)=0) then exit;
 r:=r+M[x,y];
 SetLength(P,Length(P)+1);
 P[High(P)]:=Point(x,y);
- if (PosExists(P,xl,yl)=true) and (WordExcl(r)=false) and (WordExists(D,r)=true) then begin //Если слово есть в словаре,есть обязательная позиция (xl,yl), не исключение,  то добавляем
+ if (PosExists(P,xl,yl)=true) and (WordExcl(r)=false) and (WordExists(D,r)=true) then begin //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ,пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (xl,yl), пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ,  пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   SetLength(W,Length(W)+1);
   SetLength(Mp,Length(MP)+1);
   W[High(W)]:=r;
   MP[High(MP)]:=P;
   end;
-D:=CutWords(D,r); //Убираем ненужные слова
+D:=CutWords(D,r); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
  if (ExitDesk(x-1,y)=false) and (PosExists(P,x-1,y)=false) and (M[x-1,y]<>'') then FindWords(M,W,D,MP,P,x-1,y,xl,yl,max,r);
   if (ExitDesk(x+1,y)=false) and (PosExists(P,x+1,y)=false) and (M[x+1,y]<>'') then FindWords(M,W,D,MP,P,x+1,y,xl,yl,max,r);
    if (ExitDesk(x,y-1)=false) and (PosExists(P,x,y-1)=false) and (M[x,y-1]<>'') then FindWords(M,W,D,MP,P,x,y-1,xl,yl,max,r);
@@ -390,9 +393,9 @@ G.MaxValue:=MaxVal;
 G.Visible:=true;
 for y:=0 to High(Desk) do begin
  for x:=0 to High(Desk) do begin
-  if (Desk[x,y]=' ') and (AroundLetters(x,y)=true) then begin //Поиск подходящей позиции
+  if (Desk[x,y]=' ') and (AroundLetters(x,y)=true) then begin //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   G.Progress:=G.Progress+1;
-   for i:='а' to 'я' do begin  //Перебераем все буквы на этой позиции и ищем все слова с текущей буквы
+   for i:='пїЅ' to 'пїЅ' do begin  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     Desk[x,y]:=i;
     for m:=0 to High(Desk) do begin
      for n:=0 to High(Desk) do begin
@@ -421,12 +424,12 @@ begin
     Height:=33;
     Left:=118+x*33;
     Top:=30+y*33;
-    //размер букв матрицы
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     Font.Size:=15;
-    //Цвет букв матрицы
+    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     Font.Color:=clwhite;
     OnMouseDown:=P2Down;
-    //цвет матрицы
+    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     Color:=clblack;
     Parent:=Form1;
    end;
@@ -434,7 +437,7 @@ begin
  end;
 end;
 
-procedure TForm1.DestroyDesk;    //Уничтожем все панели
+procedure TForm1.DestroyDesk;    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 var
 flag:boolean;
 i:integer;
@@ -480,7 +483,7 @@ var
 P:TPanel;
 i:integer;
 begin
-for i:=0 to High(MP[index]) do begin  //Поиск панели с координатами 33*MP[index][i].X+118,33*MP[index][i].Y+30 и выделяем ее цветом
+for i:=0 to High(MP[index]) do begin  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 33*MP[index][i].X+118,33*MP[index][i].Y+30 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
  P:=FindPanelByPos(33*MP[index][i].X+118,33*MP[index][i].Y+30);
  P.Color:=clred;
  P.Caption:=W[index][i+1];
@@ -490,7 +493,7 @@ for i:=0 to High(MP[index]) do begin  //Поиск панели с координатами 33*MP[index]
 end;
  sleep(500);
  application.ProcessMessages;
- for i:=0 to High(MP[index]) do begin //Делем обратку
+ for i:=0 to High(MP[index]) do begin //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   P:=FindPanelByPos(33*MP[index][i].X+118,33*MP[index][i].Y+30);
   //
   P.Color:=clblack;//silver;
@@ -517,7 +520,7 @@ G:=TGauge.Create(Self);
   Parent:=Statusbar1;
  end;
 
- SetText('Счет 0\0','',0,1);
+ SetText('пїЅпїЅпїЅпїЅ 0\0','',0,1);
  LoadDictionary;
  InitDesk;
  DestroyDesk;
@@ -544,26 +547,26 @@ begin
   Exclusions[High(Exclusions)]:=Str;
 end;
 
-procedure TForm1.SetFirstWord(len:integer);   //Установка первого слова длины len
+procedure TForm1.SetFirstWord(len:integer);   //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ len
 var
 i,j:integer;
 R:TWords;
 begin
 Randomize;
- for i:=0 to High(Dictionary) do begin   //Выбираем слова длины len
-  if Length(Dictionary[i])=len then begin  //и заносим в массив
+ for i:=0 to High(Dictionary) do begin   //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ len
+  if Length(Dictionary[i])=len then begin  //пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
    SetLength(R,Length(R)+1);
    R[High(R)]:=Dictionary[i];
   end;
  end;
- j:=Random(Length(R));        //Выбираем случайное слово из найденных
- for i:=0 to High(Desk) do    // и пишем его на доске
+ j:=Random(Length(R));        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ for i:=0 to High(Desk) do    // пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
   Desk[i,2]:=R[j][i+1];
- SetLength(Exclusions,Length(Exclusions)+1); //Заносим в исключения
+ SetLength(Exclusions,Length(Exclusions)+1); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  Exclusions[High(Exclusions)]:=R[j];
 end;
 
-procedure TForm1.SetText(S1,S2:string; P,I:integer); //Сначала пишем S1, а потом через паузу P пишем S2 в Satusbar.panels[i]
+procedure TForm1.SetText(S1,S2:string; P,I:integer); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ S1, пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ P пїЅпїЅпїЅпїЅпїЅ S2 пїЅ Satusbar.panels[i]
 begin
  StatusBar1.Panels[I].text:=S1;
  Application.ProcessMessages;
@@ -576,20 +579,20 @@ end;
 
 procedure TForm1.NextStep;
 var
-MP:TMPoints;       //Координаты букв слова
-W:TWords;          //Найденные слова
-i:integer;         //Индекс наилучшего найденного слова
+MP:TMPoints;       //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+W:TWords;          //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+i:integer;         //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 begin
-SetText('Думаю...','',0,0);
- FindAllWords(W,MP,maxlen);  //Поиск всех слов
- i:=GetBetterWord(W);        //Получем идекс наилучшего
-if i<>-1 then begin          //Если оно существует, то
-SetText('Нашел.','',0,0);
-  SelectWord(W,MP,i);        //Показываем его
-  AddWord(W[i],0);           //Добавляем в Listbox1 слово W[i]
- SetText('Ваш ход.','',0,0);
- SetText('Счет '+inttostr(S2)+'\'+inttostr(S1),'',0,1);
-end else SetText('Не знаю.','Ваш ход.',1500,0);
+SetText('пїЅпїЅпїЅпїЅпїЅ...','',0,0);
+ FindAllWords(W,MP,maxlen);  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+ i:=GetBetterWord(W);        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+if i<>-1 then begin          //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ
+SetText('пїЅпїЅпїЅпїЅпїЅ.','',0,0);
+  SelectWord(W,MP,i);        //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
+  AddWord(W[i],0);           //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Listbox1 пїЅпїЅпїЅпїЅпїЅ W[i]
+ SetText('пїЅпїЅпїЅ пїЅпїЅпїЅ.','',0,0);
+ SetText('пїЅпїЅпїЅпїЅ '+inttostr(S2)+'\'+inttostr(S1),'',0,1);
+end else SetText('пїЅпїЅ пїЅпїЅпїЅпїЅ.','пїЅпїЅпїЅ пїЅпїЅпїЅ.',1500,0);
 end;
 
 
@@ -656,9 +659,9 @@ begin
   if (w1=true) and (p=true) and (w2=false) then begin
      AddWord(r,1)
   end else begin
-   if w1=false then Showmessage('Не знаю такого слова.') else
-   if p=false then Showmessage('Неправильный ввод.')     else
-   if w2=true then Showmessage('Это слово было уже использовано.');
+   if w1=false then Showmessage('пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.') else
+   if p=false then Showmessage('пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.')     else
+   if w2=true then Showmessage('пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.');
    Desk[xn,yn]:=' ';
    UndoSelection;
    DrawDesk;
